@@ -1,0 +1,52 @@
+.container {
+  font-size: 2rem;
+  position: relative;
+  overflow: hidden; 
+
+}
+
+.slidingText {
+  position: absolute;
+  opacity: 1;
+  margin-right: 2rem;
+  white-space: nowrap; 
+} 
+
+.container span {
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+@media (max-width: 768px) {
+  .container {
+    font-size: 1.7rem; 
+    padding: 0 1rem; 
+    position: inherit;
+    left: -20%;
+    overflow: visible;
+  }
+
+  .slidingText {
+    margin-right: 1rem; 
+  }
+
+  .container span {
+    font-size: 1.7rem; 
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    font-size: 1.4rem; 
+    padding: 0 1rem; 
+    position: inherit;
+    left: -32%;
+    overflow: visible;
+  }
+
+  .slidingText {
+    margin-right: 0.5rem; /* Reduce margin for smaller devices */
+  }
+
+  .container span {
+    font-size: 1.4rem; /* Keep text size readable on small devices */
+  }
+}

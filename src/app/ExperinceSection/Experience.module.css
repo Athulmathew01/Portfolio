@@ -1,0 +1,149 @@
+.timeline {
+  display: flex;
+  flex-direction: column;
+  margin: 2rem auto;
+  position: relative;
+  width: 80%; /* Center timeline */
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 15px;
+  top: 0;
+  bottom: 0;
+  width: 0;
+  border-left: 2px dashed #0078d7;
+  z-index: 0;
+}
+
+/* Timeline item styles */
+.timeline_item {
+  position: relative;
+  margin-bottom: 2rem;
+  padding-left: 40px;
+  display: flex;
+  align-items: flex-start;
+}
+
+.timeline_item::before {
+  content: "";
+  position: absolute;
+  left: 8px;
+  top: 10px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #0078d7;
+  border: 3px solid #ffffff; /* Create a white ring around the point */
+  z-index: 1;
+}
+
+/* Timeline content styles */
+.timeline_content {
+  padding: 15px;
+  background: linear-gradient(135deg, #c8d4ff, #f4faff);
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  position: relative;
+  z-index: 2;
+  min-width: 20rem;
+  width: 100%;
+  height: 70%;
+  min-height: 12rem;
+  transition: transform 0.7s ease, box-shadow 0.5s ease, width 0.8s ease-in-out;
+}
+
+.timeline_content:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.timeline_content h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.timeline_content h3 span {
+  font-size: 1rem;
+  font-weight: normal;
+  color: #666;
+  margin-left: 10px;
+}
+
+.timeline_content h4 {
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 0.5rem;
+}
+
+.timeline_content p {
+  font-size: 1rem;
+  color: #777;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+  .timeline {
+    width: 90%; 
+  }
+
+  .timeline_item {
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center the content */
+    padding-left: 0; /* Remove left padding */
+  }
+
+  .timeline::before {
+    left:-22px; 
+ 
+  }
+  .timeline_item::before {
+    left: -30px;
+  }
+
+  .timeline_content {
+    padding: 10px; /* Reduce padding for smaller screens */
+    min-width: 100%; /* Ensure content fits within the container */
+    height: auto; /* Allow content to adjust its height */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow on hover */
+  }
+
+  .timeline_content h3 {
+    font-size: 1.2rem; /* Adjust font size for smaller screens */
+  }
+
+  .timeline_content h4 {
+    font-size: 1rem; /* Adjust font size for better readability */
+  }
+
+  .timeline_content p {
+    font-size: 0.9rem; /* Adjust paragraph font size */
+  }
+}
+
+@media (max-width: 480px) {
+  .timeline {
+    width: 90%; /* Adjust the width for even smaller screens */
+  }
+
+  .timeline_content {
+    min-width: 100%; /* Make sure content fills the screen width */
+    padding: 8px; /* Further reduce padding */
+  }
+
+  .timeline_content h3 {
+    font-size: 1.1rem; /* Slightly reduce heading font size */
+  }
+
+  .timeline_content h4 {
+    font-size: 0.9rem; /* Slightly reduce subheading font size */
+  }
+
+  .timeline_content p {
+    font-size: 0.85rem; /* Reduce paragraph font size */
+  }
+}

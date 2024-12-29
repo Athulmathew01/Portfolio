@@ -1,0 +1,118 @@
+.project {
+  transform: scale(0.75) rotateY(-30deg) rotateX(45deg) translateZ(4.5rem);
+  transform-origin: 50% 100%;
+  transform-style: preserve-3d;
+  box-shadow: 1rem 1rem 2rem rgba(0, 0, 0, 0.25);
+  transition: 0.6s ease transform;
+  /* background: linear-gradient(135deg, #0078D7, #1C1C1C, #000000); */
+  background: linear-gradient(135deg, #0078D7, #000000);
+
+  margin-bottom: 10%;
+  padding: 30px;
+  width: 45%;
+  min-height: 50%;
+  position: relative; 
+}
+
+.project h3 {
+  margin-bottom: 5px;
+  font-size: 1.5rem;
+}
+
+.project:hover {
+  transform: scale(1);
+}
+
+.project::before,
+.project::after {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 99%;
+  height: 97%;
+  transition: transform 0.6s ease;
+  z-index: -1; 
+}
+
+.project::before {
+  transform: translateZ(3rem);
+  border: 5px solid #0078D7;
+}
+
+.project:hover::before {
+  transform: translateZ(0);
+}
+
+.project::after {
+  transform: translateZ(-4rem);
+  background: #0078D7;
+  box-shadow: 1rem 1rem 2rem rgba(0, 0, 0, 0.25);
+}
+
+.project:hover::after {
+  transform: translateZ(-1px);
+}
+.githubIcon {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  margin-top: 1rem; 
+  cursor: pointer;
+  border-radius: 50%;
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.githubIcon:hover {
+  transform: scale(1.1); /* Slight zoom on hover */
+  background-color: #005bb5; /* Darker shade on hover */
+}
+
+.githubIcon:active {
+  transform: scale(0.95); /* Slight shrink on touch/click */
+}
+
+.githubIcon img {
+  width: 80%; 
+  height: auto;
+}
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .project {
+    transform: scale(0.9) rotateY(0deg) rotateX(0deg); 
+    padding: 15px;
+    width: 100%; 
+    margin: 0 auto 20px; 
+    min-height: auto;
+    box-shadow: 0.5rem 0.5rem 1rem rgba(0, 0, 0, 0.2);
+  }
+
+  .project h3 {
+    font-size: 1.2rem; /* Slightly smaller font size */
+  }
+
+  .project::before {
+    transform: none; 
+    border: 3px solid #0078D7; 
+  }
+
+  .project:hover::before {
+    transform: none; 
+
+  }
+
+  .project::after {
+    transform: none; 
+    padding: 20px;
+    background: transparent;
+  }
+
+  .project:hover::after {
+    transform: none; /* Static hover effect */
+  }
+}
