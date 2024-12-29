@@ -329,7 +329,7 @@
 }
 
 /* Loader Style */
-.LoaderText{ 
+/* .LoaderText{ 
   margin: 0 auto; 
   display: flex; 
   justify-content: center; 
@@ -356,7 +356,7 @@
   -webkit-background-clip: text; 
   -webkit-text-fill-color: transparent; 
   animation: lightFlow 4s linear infinite; 
-}
+} */
 
 @media (prefers-color-scheme: dark) {
   .page {

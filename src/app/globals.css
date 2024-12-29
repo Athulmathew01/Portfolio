@@ -274,3 +274,32 @@ a {
   }
   
 }
+/* Loader Style */
+.LoaderText{ 
+  margin: 0 auto; 
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  height: 100vh; 
+  font-size: 1.5rem; 
+  background-color: black; 
+} 
+@keyframes lightFlow 
+{ 
+  0% {
+     background-position: 200% 0; 
+  } 
+  100% { 
+    background-position: -200% 0; 
+  } 
+} 
+.LoaderText p { 
+  font-style: italic; 
+  font-family: 'Cursive'; 
+  font-weight:800 ; 
+  color: darkslategrey; 
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.8), transparent); background-size: 200%; 
+  -webkit-background-clip: text; 
+  -webkit-text-fill-color: transparent; 
+  animation: lightFlow 4s linear infinite; 
+}

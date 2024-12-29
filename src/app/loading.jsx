@@ -1,11 +1,11 @@
 "use client"; 
 import React from "react"; 
-import styles from './page.module.css'; 
+import "./globals.css";
 
 export default function Loading() 
 { 
     return ( 
-        <div className={styles.LoaderText}> 
+        <div className="LoaderText"> 
             <p>A M V</p> 
         </div>
     ); 
