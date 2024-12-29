@@ -10,6 +10,10 @@ export default function Navbar() {
     setIsOpen(!isOpen);
   };
 
+  const closeMenu = () => {
+    setIsOpen(false);
+  };
+
   return (
     <nav className="navbar">
       <div className="logo">AMV</div>
@@ -19,12 +23,30 @@ export default function Navbar() {
         <span></span>
       </div>
       <ul className={`navLinks ${isOpen ? "active" : ""}`}>
-        <li><Link href="#about">About</Link></li>
-        <li><Link href="#skills">Skills</Link></li>
-        <li><Link href="#projects">Projects</Link></li>
-        <li><Link href="#experience">Experience</Link></li>
-        <li><Link href="#contact">Contact</Link></li>
-        <li><a href="/Resume_athul_Junior_Data_Drupal_Engineer.pdf" download="Resume_Athul_Mathew">Resume</a></li>
+        <li>
+          <Link href="#about" onClick={closeMenu}>About</Link>
+        </li>
+        <li>
+          <Link href="#skills" onClick={closeMenu}>Skills</Link>
+        </li>
+        <li>
+          <Link href="#projects" onClick={closeMenu}>Projects</Link>
+        </li>
+        <li>
+          <Link href="#experience" onClick={closeMenu}>Experience</Link>
+        </li>
+        <li>
+          <Link href="#contact" onClick={closeMenu}>Contact</Link>
+        </li>
+        <li>
+          <a
+            href="/Resume_athul_Junior_Data_Drupal_Engineer.pdf"
+            download="Resume_Athul_Mathew"
+            onClick={closeMenu}
+          >
+            Resume
+          </a>
+        </li>
       </ul>
     </nav>
   );
