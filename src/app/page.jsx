@@ -1,6 +1,7 @@
+'use client';
 import Image from "next/image";
 import styles from "./page.module.css";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Cube from "./SlidingText";
 import Link from "next/link";
 import Experince from "./ExperinceSection/Experience";
@@ -9,6 +10,7 @@ import ContactForm from "./ContactMe/ContactMe";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import ScrollToTopButton from "./Scrolltotop";
+import Loading from "./loading";
 
 
 
@@ -54,8 +56,24 @@ const projectData = [
     },
 ];
 
-export default async function Home() {
-  await new Promise((resolve) => setTimeout(resolve, 6000));
+export default function Home() {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    // Simulate a delay or wait for assets
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 2000); // Replace with actual loading logic if needed
+
+    return () => clearTimeout(timer); // Cleanup the timer
+  }, []);
+
+  if (isLoading) {
+    return (
+      <Loading/>
+    );
+  }
+  // await new Promise((resolve) => setTimeout(resolve, 6000));
   return (
     <div className={styles.page}>
       <div className={styles.WrapperContainer} id="about">
