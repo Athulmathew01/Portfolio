@@ -2,7 +2,7 @@
 import Image from "next/image";
 import styles from "./page.module.css";
 import React, { useEffect, useState } from "react";
-import Cube from "./SlidingText";
+import SlidingText from "./SlidingText";
 import Link from "next/link";
 import Experince from "./ExperinceSection/Experience";
 import Project from "./ProjectSection/Projects";
@@ -82,7 +82,7 @@ export default function Home() {
           </div>
         <div className={styles.introContainer}>
           <h1>Hi! 👋 I’m Athul.</h1>
-          <Cube />
+          <SlidingText />
           <h4>Currently Working as Drupal Backend Developer <Link href="https://dbiz.ai/" target="_blank">@DBiz.ai</Link></h4>
           <br></br>
           <h4>With a focus on building scalable and efficient backend solutions, I specialize in Drupal development and have a strong understanding of Python and data engineering. My work involves creating robust systems, optimizing performance, and integrating complex APIs to ensure seamless user experiences.</h4>
