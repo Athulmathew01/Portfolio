@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://athulmathewvarughese.vercel.app/sitemap.xml
