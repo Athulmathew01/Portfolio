@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import styles from "./SlidingText.module.css"; // Import the CSS module
 
 const SlidingText = () => {
-  const qualities = ["Frontend Developer","Backend Developer","Pyton Developer","Drupal Developer","Problem Solver", "Tech Enthusiast"];
+  const qualities = ["FullStack Developer","Python Developer","Drupal Developer", "Tech Enthusiast"];
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
